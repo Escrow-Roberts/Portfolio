@@ -71,7 +71,6 @@
     width: 80%;
     margin: 20px auto;
     display: grid;
-    border: 1px solid black;
     padding: 5px; 
     height: content;
     overflow: hidden;
@@ -82,15 +81,14 @@
     padding: 5px;
   }
   .project-tile {
-    border: 1px solid cyan;
     display: flex;
     justify-content: space-around;
     margin-top: 10px;
     padding: 12px;
     width: 100%;
+    border-radius: 10%;
   }
   .project {
-    border: 2px solid red;
     width: 350px;
     height: 400px;
     margin: 10px;
@@ -114,6 +112,8 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    border: 1px solid whitesmoke;
+
   }
   .project-img {
     opacity: 0.72;
@@ -173,13 +173,21 @@
   width: 100%;
  display: flex;
   padding: 15px;
+  width: 50%;
+  margin: 0 auto;
+  justify-content: space-around;
 }
 .fa-brands {
   border-radius: 4px;
   font-size: 60px;
-  margin: 30px auto;
   color: white;
   padding: 2px;
+}
+.fa-brands:hover {
+  color: red;
+  font-size: 55px;
+  margin-top: -7px;
+  transition: 0.5ms;
 }
 
   /**NAVBAR MEDIA QUERY**/
