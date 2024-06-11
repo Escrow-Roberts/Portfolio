@@ -6,7 +6,7 @@
   #navbar {
     position: fixed;
     width: 100%;
-    height: 10%;
+    height: fit-content;
     background-color: rgb(219, 71, 71);
     display: flex;
     justify-content: right;
@@ -22,10 +22,16 @@
     transition: 1s;
   }
   .link {
+    
     font-size: 27px;
     width: fit-content;
     padding: 25px 17px;
     height: 100%;
+  }
+  li.link {
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
   }
   .link a {
     color: white;
@@ -41,6 +47,7 @@
     position: absolute;
     width: 100%;
     z-index: 2;
+    overflow: hidden;
   }
   
   #welcome-section {
@@ -55,6 +62,19 @@
     position: relative;
     top: 50%;
     margin: 0 auto;
+    background: linear-gradient(40deg, #a5b367, #a91af1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+      animation: fade 2s ease 0.1ms ;
+  }
+
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
   .about.h1 {
     font-size: 65px;
@@ -70,10 +90,9 @@
   #projects {
     width: 80%;
     margin: 20px auto;
-    display: grid;
-    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
     padding: 5px; 
-    height: content;
     overflow: hidden;
   }
   .project-title {
@@ -82,23 +101,25 @@
     padding: 5px;
   }
   .project-tile {
-    border: 1px solid cyan;
     display: flex;
     justify-content: space-around;
     margin-top: 10px;
     padding: 12px;
     width: 100%;
-  }
-  .project {
-    border: 2px solid red;
-    width: 350px;
-    height: 400px;
-    margin: 10px;
-  }
-  .project-1 {
-    position: relative;
-    display: flex;
-    flex-direction: column;
+    }
+    .project {
+      width: 350px;
+      height: 400px;
+      margin: 10px;
+      border-radius: 3px; 
+      overflow: hidden;
+      box-shadow: -1px 1px 11px;
+      height: fit-content;
+      }
+      .project-1 {
+      position: relative;
+      display: flex;
+      flex-direction: column;
   }
   .project-2 {
     position: relative;
@@ -142,28 +163,52 @@
   .footer {
     width: 98%;
     height: 98%;
-    margin: 7px auto;
+    margin: 3px auto;
   }
-  .footer p {
+  .footer-p {
+    margin: 2px 10px 10px 10px;
+    padding: 2px;
+    height: 55%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    color: #fff;
-    margin: 19px auto ;
-  }
-  .footer-p1 {
-    height: 20%;
-    font-size: 50px;
-    word-spacing: 5px;
-    letter-spacing: 5px;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
-    padding: 14px;
+    }
+    .footer p {
+      text-align: center;
+      color: #fff;
+      }
+      .footer-p1 {
+      font-size: 50px;
+      letter-spacing: 5px;
+      font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+      margin-bottom: 14px;
   }
   .footer-p2 {
-    font-size: 25px;
+    font-size: 19px;
     letter-spacing: 3px;
-    padding: 10px;
+    width: 50%;
+    margin: 0 auto;
   }
+.icons {
+  display: flex;
+  padding: 15px;
+  width: 50%;
+  margin: 0 auto;
+  justify-content: space-around;
+}
+.fa-brands {
+  border-radius: 4px;
+  font-size: 60px;
+  color: white;
+  padding: 2px;
+}
+.fa-brands:hover {
+  color: red;
+  font-size: 55px;
+  margin-top: -7px;
+  transition: 0.5ms;
+}
+
   /**NAVBAR MEDIA QUERY**/
   @media only screen and (max-width: 993.6px) {
     .nav-links {
@@ -186,6 +231,7 @@
     .project {
       width: 400px;
       height: 470px;
+      margin-bottom: 16px;
     }
     .project-img {
       height: 466px;
@@ -196,3 +242,77 @@
       width: 98%;
     }
   }
+
+  @media only screen and (max-width: 451px ) {
+    #navbar {
+      width: 100%;
+      display: flex;
+    
+      }
+     .nav-links {
+      display: flex;
+      justify-content: space-between;
+     }
+      .link {
+        font-size: 18px;
+      }
+    
+    .about.h1 {
+      text-align: center;
+      font-size: 55px;
+    }
+    .about.p {
+      font-size: 29px;
+    }
+    .main{
+      padding: 0;
+    }
+   #projects {
+    padding: 0;
+    margin: 0 ;
+    width: 100%;
+  }
+  .project-tile {
+    padding: 0;
+    padding-left: -15px;
+   width: inherit;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+  }
+  .project {
+    width: inherit;
+    margin: 0;
+    height: 380px;
+    box-shadow: 1px 1px 3px;
+    }
+     
+  .project-img {
+    width: inherit;
+  }
+  .project-a {
+    margin: 0;
+  }
+  .footer {
+    min-height: 400px;
+  }
+  .footer-p {
+    height: fit-content;
+    margin-top: 3px;
+  }
+  .footer-p1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+  .footer-p2 {
+    font-size: 11px;
+    width: 100%;
+    padding: 5px;
+  }
+  .icons {
+    width: 100%;
+    margin-top: 40px;
+    padding: 0;
+  }
+}
